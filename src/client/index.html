@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="productApp">
 
 <head>
     <title>Angular 1.x with NodeJS </title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.module.js"></script>
+    <script type="text/javascript" src="app/catalog-list/catalog-list.module.js"></script>
+    <script type="text/javascript" src="app/catalog-list/catalog-list.component.js"></script>
+    <script type="text/javascript" src="app/catalog-list/catalog-list.component.spec.js"></script>
 </head>
 
 <body>
+    <!--div ng-controller="catalogCtrl" ng-init="getAll()">
+        <ul>
+            <li ng-repeat="catalog in catalogs">{{catalog.name}}</li>
+        </ul>
+    </div-->
+    <catalog-list></catalog-list>
+
 </body>
 
 </html>
