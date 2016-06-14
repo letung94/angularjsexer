@@ -1,1 +1,1 @@
-# angularjsexer
+This is a sample template to be used in the angular training
