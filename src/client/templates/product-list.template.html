@@ -1,8 +1,9 @@
-<ul ng-init="$ctrl.getByCatalogName('Phone')">
-    <li ng-clock>
-        <p>{{$ctrl.product.name}}</p>
-        <p>{{$ctrl.product.name}}</p>
-        <p>{{$ctrl.product.thumbnail}}</p>
-        <p>{{$ctrl.product.price}}</p>
+<ul>
+    <li ng-repeat="product in $ctrl.products">
+        <a ng-cloak ng-href="{{'#/products/'+  $ctrl.category + '/'+product.id}}">
+            <p ng-cloak>{{product.name}}</p>
+            <p ng-cloak><img ng-src="content/images/{{product.thumbnail}}" /></p>
+            <p ng-cloak>{{product.price}}</p>
+        </a>
     </li>
 </ul>

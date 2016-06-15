@@ -5,7 +5,7 @@ var Q = require('q');
 var categoryService = require('../services/categoryService');
 
 var router = express.Router();
-
+ 
 router.get('/', function (req, res, next) {   
     Q.when()
     .then(function() {

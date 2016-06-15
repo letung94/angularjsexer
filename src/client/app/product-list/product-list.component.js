@@ -1,15 +1,17 @@
 angular.module('product').
-component('productItem', {
+component('productList', {
     templateUrl: 'templates/product-list.template.html',
-    controller: ['$http', function CatalogListController($http) {
+    controller: ['$http', '$routeParams', function ProductListController($http, $routeParams) {
         var self = this;
-        self.product = null;
-        self.getByCatalogName = function(catalogname) {
-            $http.get('http://localhost:3000/products/' + catalogname).then(function(res) {
-                self.product = res.data;
+        self.category = $routeParams.category;
+        self.products = null;
+        self.getByCategory = function(category) {
+            $http.get('http://localhost:3000/api/products?category=' + category).then(function(res) {
+                self.products = res.data;
             }, function(res) {
 
             });
         }
+        self.getByCategory(self.category.toLowerCase());
     }]
 });
